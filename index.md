@@ -10,6 +10,6 @@ header:
       url: "/files/cv.pdf"
     - label: "Research"
       url: "/research/"
-excerpt: "PhD student in [Your Field], interested in [topics like GRMHD, black hole accretion, etc.]"
+excerpt: "PhD student"
 ---
 
