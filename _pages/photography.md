@@ -1,1 +1,6 @@
-Check for my photos here : https://www.instagram.com/santhiya.ps_/
+---
+permalink: /photography/
+title: "Photography"
+---
+
+Check for my photos here : permalink: /https://www.instagram.com/santhiya.ps_/
