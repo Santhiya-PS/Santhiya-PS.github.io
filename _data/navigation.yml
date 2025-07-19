@@ -1,9 +1,9 @@
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
+  - title: "Resume"
+    url: /resume/
+  - title: "Photography"
+    url: /https://www.instagram.com/santhiya.ps_//
+  - title: "Research"
+    url: /research/
   - title: "About"
     url: /about/
