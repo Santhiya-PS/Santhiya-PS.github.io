@@ -1,0 +1,18 @@
+/* Set the background color and font for the whole page */
+html, body {
+    background-color: #000;   /* black background */
+    color: #eee;              /* light text so it's readable */
+    font-family: "Arial", sans-serif;  /* change to your preferred font */
+    margin: 0;
+    padding: 0;
+}
+
+/* Optional: style links so they’re visible on dark background */
+a {
+    color: #1e90ff;  /* bright blue links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
