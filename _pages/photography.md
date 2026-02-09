@@ -1,6 +1,7 @@
 ---
 permalink: /photography/
 title: "Photography"
+body_class: photography-page
 ---
 <figure style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/images/waves.png"
