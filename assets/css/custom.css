@@ -1,16 +1,6 @@
-body::before {
-    content: "CUSTOM CSS LOADED";
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: red;
-    color: white;
-    padding: 6px;
-    z-index: 9999;
+body, .site, .page-content {
+    background-color: #000 !important;
 }
-
-
-
 /* Global */
 html, body {
     background-color: #000;
@@ -32,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     font-family: Georgia, serif;
 }
+
 
 
 
