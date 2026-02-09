@@ -1,10 +1,23 @@
-/* assets/css/custom.css */
+/* Global */
 html, body {
     background-color: #000;
     color: #eee;
-    font-family: Arial, sans-serif;
 }
 
-a { color: #1e90ff; text-decoration: none; }
+/* Common theme containers */
+body, main, section, article,
+.site, .wrapper, .page-content, .container {
+    background-color: #000;
+}
+
+/* Links */
+a { color: #1e90ff; }
 a:hover { text-decoration: underline; }
-h1, h2, h3, h4, h5, h6 { color: #fff; font-family: Georgia, serif; }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    font-family: Georgia, serif;
+}
+
+
