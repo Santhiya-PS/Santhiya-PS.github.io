@@ -3,5 +3,5 @@ permalink: /photography/
 title: "Photography"
 ---
 
-![Waves](/assets/images/waves.png)
+![Waves](assets/images/waves.png)
 
