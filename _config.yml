@@ -20,7 +20,7 @@ description: >-
   and jets around black holes with general relativistic MHD simulations.
 url: "https://santhiya-ps.github.io"
 github_username: Santhiya-PS
-minimal_mistakes_skin: dark2
+minimal_mistakes_skin: dark
 search: true
 
 # Build settings
