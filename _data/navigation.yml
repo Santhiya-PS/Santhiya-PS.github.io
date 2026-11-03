@@ -1,9 +1,9 @@
 main:
-  - title: "Resume"
-    url: /resume/
-  - title: "Photography"
-    url: /photography/
   - title: "Research"
     url: /research/
+  - title: "CV"
+    url: /cv/
+  - title: "Photography"
+    url: /photography/
   - title: "About"
     url: /about/

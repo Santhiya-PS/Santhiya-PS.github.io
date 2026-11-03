@@ -13,13 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Home
-email:
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-github_username: username
+title: Santhiya P. S.
+email: santhiya.ps@icts.res.in
+description: >-
+  PhD student at ICTS-TIFR, Bengaluru, studying magnetized accretion flows
+  and jets around black holes with general relativistic MHD simulations.
+url: "https://santhiya-ps.github.io"
+github_username: Santhiya-PS
 minimal_mistakes_skin: dark2
 search: true
 
@@ -28,9 +28,7 @@ markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Kolkata
 
 include:
   - _pages
@@ -59,8 +57,16 @@ plugins:
 author:
   name   : "Santhiya P S"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Computational Astrophysicist"
+  bio    : "PhD student, computational astrophysics. Black hole accretion, magnetic fields and jets."
+  location : "ICTS-TIFR, Bengaluru, India"
+  email  : "santhiya.ps@icts.res.in"
   links:
+    - label: "CV"
+      icon: "fas fa-fw fa-file-pdf"
+      url: "/files/cv.pdf"
+    - label: "ORCID"
+      icon: "fab fa-fw fa-orcid"
+      url: "https://orcid.org/0009-0000-7779-3262"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Santhiya-PS"
@@ -75,7 +81,7 @@ footer:
       url: "https://github.com/Santhiya-PS"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://www.instagram.com/santhiya.ps_/"
 
 defaults:
   # _posts
@@ -94,7 +100,7 @@ defaults:
       path: "_pages"
       type: pages
     values:
-      layout: splash
+      layout: single
       author_profile: true
 
 category_archive:
