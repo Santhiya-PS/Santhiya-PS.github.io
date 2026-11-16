@@ -20,7 +20,7 @@ layout: splash
 <div class="pg-grid">
 {%- for p in site.data.photos -%}
 {%- assign full = '/assets/images/photography/' | append: p.file | append: '.jpg' | relative_url -%}
-<a class="pg-item" style="--ar: {{ p.width | times: 1.0 | divided_by: p.height | round: 4 }}" href="{{ full }}#view" data-full="{{ full }}" data-original="{{ '/assets/images/photography/originals/' | append: p.file | append: '.jpg' | relative_url }}" data-tags="{{ p.tags | join: ',' }}" data-title="{{ p.title | escape }}">
+<a class="pg-item" style="--ar: {{ p.width | times: 1.0 | divided_by: p.height | round: 4 }}" href="{{ full }}#view" data-full="{{ full }}" data-tags="{{ p.tags | join: ',' }}" data-title="{{ p.title | escape }}">
 <img src="{{ '/assets/images/photography/thumbs/' | append: p.file | append: '.jpg' | relative_url }}" alt="{{ p.title | escape }}" width="{{ p.width }}" height="{{ p.height }}" loading="lazy">
 <span class="pg-cap">{{ p.title }}</span>
 </a>
