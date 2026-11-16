@@ -13,6 +13,12 @@ header:
 excerpt: "PhD student at ICTS-TIFR, Bengaluru<br>Black hole accretion, magnetic fields and jets"
 ---
 
-## Hi, I'm Santhiya
+## About me
 
-I am a PhD student at the [International Centre for Theoretical Sciences](https://www.icts.res.in/) (ICTS-TIFR) in Bengaluru, India. I use general relativistic magnetohydrodynamic (GRMHD) simulations to understand how magnetic fields and turbulence shape the hot plasma that spirals into black holes, and how that plasma launches jets. [Read more about my research](/research/).
+I am Santhiya, pursuing a PhD in Astrophysics at ICTS, Bangalore. You can find details about my research [here](/research/).
+
+I grew up in Tamil Nadu, India, and moved to Bangalore for my PhD. The nature of my work also gives me the chance to do fun visualisations and a lot of scientific plotting, which I enjoy quite a bit.
+
+Outside academics, I enjoy photography across a wide range of genres, which you can find [here](/photography/). I do print them at times.
+
+I mix my major interests together by connecting the photos I click with my visualisations.
