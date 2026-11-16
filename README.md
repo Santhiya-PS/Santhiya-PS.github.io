@@ -7,3 +7,4 @@ Personal academic website, built with Jekyll and the [Minimal Mistakes](https://
 - `_data/navigation.yml`: top navigation
 - `files/cv.pdf`: CV linked from the site
 - `_config.yml`: site and author settings
+- `scripts/add_photo.py`: adds a photo to the Photography page (resizes, makes the thumbnail, updates `_data/photos.yml`); run `python3 scripts/add_photo.py --help`
