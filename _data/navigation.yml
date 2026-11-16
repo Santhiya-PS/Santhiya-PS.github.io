@@ -1,8 +1,10 @@
 main:
+  - title: "Home"
+    url: /
   - title: "Research"
     url: /research/
-  - title: "CV"
-    url: /cv/
+  - title: "Positions & Publications"
+    url: /positions/
   - title: "Photography"
     url: /photography/
   - title: "About"
