@@ -1,0 +1,35 @@
+# One entry per photo. To add a photo:
+#   1. put the web-size image in assets/images/photography/<file>.jpg (about 1800 px long edge)
+#   2. put a thumbnail in assets/images/photography/thumbs/<file>.jpg (about 700 px long edge)
+#   3. add an entry here. width/height are the thumbnail size in pixels.
+# Tags are free text; the filter buttons are built from whatever tags appear below.
+- file: parakeet
+  title: "Parakeet"
+  tags: [birds, wildlife]
+  width: 700
+  height: 467
+- file: skyline
+  title: "City lights, long exposure"
+  tags: [night, city]
+  width: 700
+  height: 467
+- file: mural
+  title: "Mural and scooter"
+  tags: [street, city]
+  width: 700
+  height: 467
+- file: butterfly
+  title: "Red admiral butterfly"
+  tags: [wildlife]
+  width: 700
+  height: 467
+- file: milky-way
+  title: "Milky Way over a pine"
+  tags: [astro, night]
+  width: 525
+  height: 700
+- file: bee-eaters
+  title: "Bee-eaters"
+  tags: [birds, wildlife]
+  width: 700
+  height: 467
