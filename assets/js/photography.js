@@ -35,10 +35,12 @@
       '<button class="pg-lb-btn pg-lb-prev" aria-label="Previous photo">&#8249;</button>' +
       '<button class="pg-lb-btn pg-lb-next" aria-label="Next photo">&#8250;</button>' +
     '</div>' +
-    '<div class="pg-lb-info"><div class="pg-lb-title"></div><div class="pg-lb-meta"></div></div>';
+    '<div class="pg-lb-info"><div class="pg-lb-title"></div><div class="pg-lb-meta"></div>' +
+      '<a class="pg-lb-dl" download>Download original</a></div>';
   document.body.appendChild(lb);
   var stage = lb.querySelector('.pg-lb-stage'), img = stage.querySelector('img');
   var titleEl = lb.querySelector('.pg-lb-title'), metaEl = lb.querySelector('.pg-lb-meta');
+  var dlEl = lb.querySelector('.pg-lb-dl');
   var current = null, opener = null, token = 0;
 
   function visible() { return items.filter(function (i) { return !i.hidden; }); }
@@ -59,6 +61,7 @@
     full.onerror = function () { if (mine === token) lb.classList.remove('loading'); };
     full.src = item.dataset.full;
 
+    dlEl.href = item.dataset.original;
     var v = visible();
     titleEl.textContent = item.dataset.title;
     metaEl.textContent = item.dataset.tags.split(',').join(' · ') + '   —   ' + (v.indexOf(item) + 1) + ' / ' + v.length;
