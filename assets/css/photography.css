@@ -12,11 +12,17 @@
 .pg-filter:focus-visible, .pg-item:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 .pg-item:focus:not(:focus-visible) { outline: none; }
 
-.pg-grid { column-width: 260px; column-gap: .6rem; }
-.pg-item { display: block; position: relative; margin: 0 0 .6rem; break-inside: avoid; overflow: hidden; border-radius: 3px; }
+/* Rows of equal height: each tile's width follows its aspect ratio (--ar, set per photo).
+   Plain flexbox, no CSS columns and no transforms, so thumbnails cannot flicker on hover. */
+.pg-grid { display: flex; flex-wrap: wrap; gap: .6rem; }
+.pg-grid::after { content: ""; flex-grow: 1000; }   /* keeps a short last row from stretching */
+.pg-item {
+  display: block; position: relative; overflow: hidden; border-radius: 3px;
+  aspect-ratio: var(--ar);
+  flex: calc(var(--ar) * 100) 1 calc(var(--ar) * 230px);
+}
 .pg-item[hidden] { display: none; }
-.pg-item img { display: block; width: 100%; height: auto; transition: transform .35s ease; }
-.pg-item:hover img { transform: scale(1.03); }
+.pg-item img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .pg-cap {
   position: absolute; left: 0; right: 0; bottom: 0; padding: 1.4em .8em .5em;
   color: #fff; font-size: .8em; line-height: 1.3;
@@ -57,11 +63,12 @@
 .pg-lightbox.single .pg-lb-prev, .pg-lightbox.single .pg-lb-next { display: none; }
 @media (max-width: 600px) { .pg-lb-stage img { padding: 3.5rem .25rem 0; } .pg-lb-prev, .pg-lb-next { top: auto; bottom: .4rem; transform: none; } }
 
-/* small spinner while the full-size photo loads (the thumbnail is already showing) */
-.pg-lb-spinner {
-  position: absolute; left: 50%; top: 50%; width: 2rem; height: 2rem; margin: -1rem 0 0 -1rem;
-  border: 3px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%;
-  opacity: 0; pointer-events: none; animation: pg-spin .8s linear infinite;
-}
-.pg-lightbox.loading .pg-lb-spinner { opacity: 1; }
-@keyframes pg-spin { to { transform: rotate(360deg); } }
+/* Loading feedback while the full-size photo downloads (the thumbnail is already showing):
+   the photo is slightly soft and sharpens when ready, and a thin line sweeps along the top edge. */
+.pg-lb-stage img { transition: filter .4s ease; }
+.pg-lightbox.loading .pg-lb-stage img { filter: blur(5px); }
+.pg-lb-bar { position: absolute; top: 0; left: 0; right: 0; height: 2px; overflow: hidden; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.pg-lb-bar::before { content: ""; position: absolute; top: 0; bottom: 0; width: 30%; background: rgba(255,255,255,.75); animation: pg-sweep 1.1s ease-in-out infinite; }
+.pg-lightbox.loading .pg-lb-bar { opacity: 1; }
+@keyframes pg-sweep { from { left: -30%; } to { left: 100%; } }
+@media (prefers-reduced-motion: reduce) { .pg-lb-bar::before { animation: none; width: 100%; opacity: .5; } .pg-lb-stage img { transition: none; } }

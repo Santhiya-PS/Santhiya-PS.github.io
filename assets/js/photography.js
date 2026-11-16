@@ -30,7 +30,7 @@
   lb.innerHTML =
     '<div class="pg-lb-stage">' +
       '<img alt="">' +
-      '<div class="pg-lb-spinner" aria-hidden="true"></div>' +
+      '<div class="pg-lb-bar" aria-hidden="true"></div>' +
       '<button class="pg-lb-btn pg-lb-close" aria-label="Close">&times;</button>' +
       '<button class="pg-lb-btn pg-lb-prev" aria-label="Previous photo">&#8249;</button>' +
       '<button class="pg-lb-btn pg-lb-next" aria-label="Next photo">&#8250;</button>' +
