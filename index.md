@@ -15,4 +15,4 @@ excerpt: "PhD student at ICTS-TIFR, Bengaluru<br>Black hole accretion, magnetic 
 
 ## Hi, I'm Santhiya
 
-I am a PhD student at the [International Centre for Theoretical Sciences](https://www.icts.res.in/) (ICTS-TIFR) in Bengaluru, India. I use general relativistic magnetohydrodynamic (GRMHD) simulations to understand how magnetic fields and turbulence shape the hot plasma that spirals into black holes, and how that plasma launches jets. [Read more about my research](/research/) or [about me](/about/).
+I am a PhD student at the [International Centre for Theoretical Sciences](https://www.icts.res.in/) (ICTS-TIFR) in Bengaluru, India. I use general relativistic magnetohydrodynamic (GRMHD) simulations to understand how magnetic fields and turbulence shape the hot plasma that spirals into black holes, and how that plasma launches jets. [Read more about my research](/research/).

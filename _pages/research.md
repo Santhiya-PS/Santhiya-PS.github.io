@@ -3,9 +3,7 @@ permalink: /research/
 title: "Research"
 ---
 
-## Interests
-
-Plasma flows around compact objects, turbulence in accretion disks, general relativistic magnetohydrodynamics, polarimetric techniques, and large-scale simulations.
+I study plasma flows around black holes: how turbulence and magnetic fields drive accretion, and how they are connected to the launching of jets. My main tool is large-scale general relativistic magnetohydrodynamic (GRMHD) simulations. I am also interested in connecting simulations to observations through polarimetric signatures, for example around M87\*.
 
 ## Plots and movies
 
