@@ -3,7 +3,7 @@
 Personal academic website, built with Jekyll and the [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) remote theme (skin: `dark`) and hosted on GitHub Pages.
 
 - `index.md`: home page
-- `_pages/`: About, Research, Positions and Publications, Photography
+- `_pages/`: About, Research, Publications, Photography
 - `_data/navigation.yml`: top navigation
 - `files/cv.pdf`: CV linked from the site
 - `_config.yml`: site and author settings
