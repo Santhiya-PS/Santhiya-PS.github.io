@@ -10,6 +10,7 @@ search: false
 // Dark theme = pure black background (default); the light theme is in light-theme.css, switched from the top bar.
 // One simple font (Inter) for headings and text.
 $background-color: #000;
+$text-color: #fff;
 $footer-background-color: #000;
 $sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $sans-serif-narrow: $sans-serif;
@@ -47,6 +48,7 @@ h1, h2, h3, h4, h5, h6, .page__title { font-weight: 600; letter-spacing: 0; }
 
 // Home page: no big title over the banner photo (the name is already in the top bar).
 .layout--splash .page__hero--overlay .page__title { display: none; }
+.layout--splash .page__hero--overlay { min-height: 15rem; }
 
 // Home page "About me": text on the left, portrait on the right (stacked on small screens).
 .about { display: flex; align-items: flex-start; gap: 2rem; max-width: 52rem; }

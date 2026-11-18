@@ -12,7 +12,7 @@ layout: splash
 {%- for c in site.data.photo_categories -%}
 {%- assign cover = site.data.photos | where: "file", c.cover | first -%}
 <a class="pg-cat" href="#{{ c.key }}" data-cat="{{ c.key }}">
-<img src="{{ '/assets/images/photography/thumbs/' | append: cover.file | append: '.jpg' | relative_url }}" alt="" width="{{ cover.width }}" height="{{ cover.height }}" loading="lazy">
+<img src="{{ '/assets/images/photography/' | append: cover.file | append: '.jpg' | relative_url }}" alt="" loading="lazy">
 <div class="pg-cat-text">
 <div class="pg-cat-title">{{ c.title }}</div>
 <div class="pg-cat-desc">{{ c.description | markdownify }}</div>

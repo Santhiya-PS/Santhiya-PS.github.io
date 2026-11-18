@@ -1,21 +1,23 @@
 /* Photography page: category overview + category view (thumbnail grid) + lightbox */
 .pg-title { margin-top: 1.5rem; }
-/* overview: one row per theme: cover photo on the left, name and description on the right */
-.pg-cats { display: flex; flex-direction: column; gap: 2.5rem; margin: 1rem 0 2rem; max-width: 64rem; }
+/* overview: compact rows, small cover photo on the left, name and description on the right.
+   Sizes are in px on purpose: the theme scales rem up to 22px on wide screens, which made these too big. */
+.pg-cats { display: flex; flex-direction: column; gap: 14px; margin: 6px 0 28px; max-width: 640px; }
 .pg-cats[hidden], .pg-view[hidden] { display: none; }
 .pg-cat {
-  display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 2rem; align-items: center;
+  display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 18px; align-items: center;
   color: inherit; text-decoration: none; border: 0;
 }
-.pg-cat img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 3px; }
-.pg-cat-title { font-size: 1.6rem; font-weight: 600; line-height: 1.2; }
-.pg-cat:hover .pg-cat-title { text-decoration: underline; text-underline-offset: 4px; }
-.pg-cat-desc { margin-top: .5rem; font-size: .95rem; line-height: 1.6; opacity: .8; }
-.pg-cat-desc p, .pg-view-desc p { margin: 0 0 .7em; }
+.pg-cat img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 3px; }
+.pg-cat-title { font-size: 19px; font-weight: 600; line-height: 1.25; }
+.pg-cat:hover .pg-cat-title { text-decoration: underline; text-underline-offset: 3px; }
+.pg-cat-desc { margin-top: 4px; font-size: 14.5px; line-height: 1.5; opacity: .8; }
+.pg-cat-desc p, .pg-view-desc p { margin: 0 0 .6em; }
 .pg-cat-desc p:last-child, .pg-view-desc p:last-child { margin-bottom: 0; }
-@media (max-width: 700px) {
-  .pg-cat { grid-template-columns: 1fr; gap: .8rem; }
-  .pg-cat-title { font-size: 1.35rem; }
+@media (max-width: 520px) {
+  .pg-cat { grid-template-columns: 112px minmax(0, 1fr); gap: 12px; }
+  .pg-cat-title { font-size: 16.5px; }
+  .pg-cat-desc { font-size: 13px; }
 }
 
 /* theme page: back link, heading, description, then the grid */
