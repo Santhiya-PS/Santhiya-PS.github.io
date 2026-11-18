@@ -2,35 +2,36 @@
 #   1. put the web-size image in assets/images/photography/<file>.jpg (about 1800 px long edge)
 #   2. put a thumbnail in assets/images/photography/thumbs/<file>.jpg (about 700 px long edge)
 #   3. add an entry here. width/height are the thumbnail size in pixels.
-# Tags are free text; the filter buttons are built from whatever tags appear below.
+# tags: use the category keys from _data/photo_categories.yml (birds, astro, landscape, nature, city, street).
+# A photo can be in more than one category.
 - file: parakeet
   title: "Parakeet"
-  tags: [birds, wildlife]
+  tags: [birds]
   width: 700
   height: 467
 - file: skyline
   title: "City lights, long exposure"
-  tags: [night, city]
+  tags: [city]
   width: 700
   height: 467
 - file: mural
   title: "Mural and scooter"
-  tags: [street, city]
+  tags: [street]
   width: 700
   height: 467
 - file: butterfly
   title: "Red admiral butterfly"
-  tags: [wildlife]
+  tags: [nature]
   width: 700
   height: 467
 - file: milky-way
   title: "Milky Way over a pine"
-  tags: [astro, night]
+  tags: [astro]
   width: 525
   height: 700
 - file: bee-eaters
   title: "Bee-eaters"
-  tags: [birds, wildlife]
+  tags: [birds]
   width: 700
   height: 467
 - file: palms-in-the-paddy-fields
@@ -40,27 +41,27 @@
   height: 700
 - file: lightning
   title: "Lightning"
-  tags: [sky, night]
+  tags: [nature]
   width: 504
   height: 700
 - file: sunflower
   title: "Sunflower"
-  tags: [macro, nature]
+  tags: [nature]
   width: 467
   height: 700
 - file: wings-open
   title: "Wings open"
-  tags: [birds, wildlife]
+  tags: [birds]
   width: 700
   height: 525
 - file: breaking-wave
   title: "Breaking wave"
-  tags: [seascape]
+  tags: [landscape]
   width: 700
   height: 616
 - file: moon-through-the-blur
   title: "Moon through the blur"
-  tags: [nature, abstract]
+  tags: [astro]
   width: 700
   height: 466
 - file: midtown-from-above
@@ -70,31 +71,31 @@
   height: 700
 - file: lower-manhattan-at-night
   title: "Lower Manhattan at night"
-  tags: [night, city]
+  tags: [city]
   width: 700
   height: 394
 - file: sparrow-among-blossoms
   title: "Sparrow among blossoms"
-  tags: [birds, wildlife, nature]
+  tags: [birds]
   width: 467
   height: 700
 - file: milky-way-core
   title: "Milky Way core"
-  tags: [astro, night]
+  tags: [astro]
   width: 467
   height: 700
 - file: shore-from-above
   title: "Shore from above"
-  tags: [seascape]
+  tags: [landscape]
   width: 700
   height: 467
 - file: butterfly-and-shadows
   title: "Butterfly and shadows"
-  tags: [wildlife, macro]
+  tags: [nature]
   width: 700
   height: 513
 - file: iridescent-clouds
   title: "Iridescent clouds"
-  tags: [sky, nature]
+  tags: [nature]
   width: 525
   height: 700

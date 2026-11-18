@@ -1,15 +1,28 @@
-/* Photography page: tag filter + thumbnail grid + lightbox */
+/* Photography page: category overview + category view (thumbnail grid) + lightbox */
 .pg-title { margin-top: 1.5rem; }
-.pg-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.5rem; }
+/* overview: one card per category (cover photo, title, description) */
+.pg-cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.4rem 1rem; margin: 0 0 2rem; }
+.pg-cats[hidden], .pg-view[hidden] { display: none; }
+.pg-cat { display: block; color: inherit; text-decoration: none; border: 0; }
+.pg-cat img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 3px; }
+.pg-cat-title { display: block; margin-top: .6rem; font-size: 1.05rem; font-weight: 600; }
+.pg-cat:hover .pg-cat-title { text-decoration: underline; text-underline-offset: 3px; }
+.pg-cat-count { font-size: .8rem; font-weight: 400; opacity: .6; margin-left: .3em; }
+.pg-cat-desc { display: block; margin-top: .2rem; font-size: .9rem; line-height: 1.45; opacity: .8; }
+@media (max-width: 600px) { .pg-cats { grid-template-columns: 1fr 1fr; gap: 1.1rem .7rem; } .pg-cat-desc { font-size: .82rem; } }
+
+/* category view: switcher links, heading, then the grid */
+.pg-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.2rem; }
 .pg-filter {
-  font: inherit; font-size: .85em; text-transform: capitalize; cursor: pointer;
+  font: inherit; font-size: .85em; cursor: pointer; text-decoration: none;
   color: inherit; background: transparent;
   border: 1px solid rgba(128,128,128,.55); border-radius: 999px; padding: .3em .9em;
 }
-.pg-filter span { opacity: .6; margin-left: .25em; }
-.pg-filter:hover { border-color: currentColor; }
-.pg-filter[aria-pressed="true"] { border-color: currentColor; background: rgba(128,128,128,.3); font-weight: 600; }
-.pg-filter:focus-visible, .pg-item:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.pg-filter:hover { border-color: currentColor; color: inherit; }
+.pg-filter[aria-current="page"] { border-color: currentColor; background: rgba(128,128,128,.3); font-weight: 600; }
+.pg-view-title { margin: 0 0 .2rem; }
+.pg-view-desc { margin: 0 0 1.2rem; opacity: .8; }
+.pg-filter:focus-visible, .pg-item:focus-visible, .pg-cat:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 .pg-item:focus:not(:focus-visible) { outline: none; }
 
 /* Rows of equal height: each tile's width follows its aspect ratio (--ar, set per photo).

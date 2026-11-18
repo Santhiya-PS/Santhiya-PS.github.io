@@ -2,9 +2,11 @@
 """Add a photo to the Photography page.
 
 Usage:
-    python3 scripts/add_photo.py PATH_TO_ORIGINAL [-t "Title"] [--tags birds,wildlife] [-n file-name]
+    python3 scripts/add_photo.py PATH_TO_ORIGINAL [-t "Title"] [--tags birds,nature] [-n file-name]
 
 Anything you leave out (title, tags) is asked for interactively.
+Tags must be categories listed in _data/photo_categories.yml (birds, astro, landscape, nature,
+city, street); a photo can be in more than one. To add a new category, add it to that file first.
 
 What it does:
   1. makes a web-size copy   -> assets/images/photography/<name>.jpg         (1800 px long edge)
@@ -31,6 +33,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PHOTO_DIR = ROOT / "assets" / "images" / "photography"
 THUMB_DIR = PHOTO_DIR / "thumbs"
 DATA_FILE = ROOT / "_data" / "photos.yml"
+CATEGORY_FILE = ROOT / "_data" / "photo_categories.yml"
 
 FULL_EDGE, FULL_QUALITY = 1800, 85
 THUMB_EDGE, THUMB_QUALITY = 700, 80
@@ -46,13 +49,11 @@ def existing_names():
     return set(re.findall(r"^- file:\s*(\S+)\s*$", DATA_FILE.read_text(), flags=re.M))
 
 
-def existing_tags():
-    if not DATA_FILE.exists():
+def categories():
+    """The category keys from _data/photo_categories.yml (the only tags the page understands)."""
+    if not CATEGORY_FILE.exists():
         return []
-    tags = set()
-    for group in re.findall(r"^\s*tags:\s*\[(.*?)\]", DATA_FILE.read_text(), flags=re.M):
-        tags.update(t.strip() for t in group.split(",") if t.strip())
-    return sorted(tags)
+    return re.findall(r"^- key:\s*(\S+)\s*$", CATEGORY_FILE.read_text(), flags=re.M)
 
 
 def save_resized(img, edge, quality, dest):
@@ -73,7 +74,7 @@ def main():
     ap = argparse.ArgumentParser(description="Add a photo to the Photography page.")
     ap.add_argument("image", help="path to the original image (JPEG, PNG, TIFF, ...)")
     ap.add_argument("-t", "--title", help="caption shown on hover and in the viewer")
-    ap.add_argument("--tags", help="comma-separated tags, e.g. birds,wildlife")
+    ap.add_argument("--tags", help="comma-separated categories, e.g. birds,nature")
     ap.add_argument("-n", "--name", help="file name without extension (default: made from the title)")
     args = ap.parse_args()
 
@@ -85,15 +86,19 @@ def main():
     if not title:
         sys.exit("A title is required.")
 
+    known = categories()
     tags = args.tags
     if tags is None:
-        known = existing_tags()
         if known:
-            print("Existing tags: " + ", ".join(known))
-        tags = input("Tags (comma-separated): ")
+            print("Categories: " + ", ".join(known))
+        tags = input("Categories (comma-separated): ")
     tag_list = [t.strip().lower() for t in tags.split(",") if t.strip()]
     if not tag_list:
-        sys.exit("At least one tag is required (the filter buttons are built from tags).")
+        sys.exit("At least one category is required.")
+    unknown = [t for t in tag_list if t not in known]
+    if unknown:
+        sys.exit(f"Unknown category: {', '.join(unknown)}. Choose from: {', '.join(known)} "
+                 f"(or add a new one to {CATEGORY_FILE.relative_to(ROOT)}).")
 
     name = slugify(args.name or title)
     if not name:

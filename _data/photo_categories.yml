@@ -1,0 +1,29 @@
+# The categories shown on the Photography page, in this order.
+#   key:         the tag used in _data/photos.yml (lowercase, no spaces)
+#   title:       heading on the card and the category view
+#   description: a line or two telling visitors what to expect
+#   cover:       the `file` of the photo shown on the card (must be in photos.yml)
+- key: birds
+  title: "Birds"
+  description: "Perched, preening and in flight: the birds I run into with a camera in hand."
+  cover: wings-open
+- key: astro
+  title: "Astro"
+  description: "The Milky Way and the Moon: photographs of the night sky."
+  cover: milky-way-core
+- key: landscape
+  title: "Landscape"
+  description: "Fields, coastlines and open skies, from quiet paddy fields to crashing waves."
+  cover: palms-in-the-paddy-fields
+- key: nature
+  title: "Nature"
+  description: "Closer looks at the natural world: lightning, flowers, butterflies and clouds."
+  cover: sunflower
+- key: city
+  title: "City"
+  description: "Skylines and tall buildings, in daylight and after dark."
+  cover: lower-manhattan-at-night
+- key: street
+  title: "Street & people"
+  description: "Streets, murals and the people in them."
+  cover: mural

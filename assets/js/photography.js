@@ -1,25 +1,6 @@
 (function () {
   var items = Array.prototype.slice.call(document.querySelectorAll('.pg-item'));
-  var buttons = Array.prototype.slice.call(document.querySelectorAll('.pg-filter'));
   if (!items.length) return;
-
-  // ---- tag filter (the selected tag is kept in the URL hash, e.g. /photography/#birds)
-  function applyFilter(tag) {
-    var known = buttons.some(function (b) { return b.dataset.tag === tag; });
-    if (!known) tag = 'all';
-    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.tag === tag ? 'true' : 'false'); });
-    items.forEach(function (it) {
-      it.hidden = !(tag === 'all' || it.dataset.tags.split(',').indexOf(tag) !== -1);
-    });
-    return tag;
-  }
-  buttons.forEach(function (b) {
-    b.addEventListener('click', function () {
-      var t = applyFilter(b.dataset.tag);
-      history.replaceState(null, '', t === 'all' ? location.pathname : '#' + encodeURIComponent(t));
-    });
-  });
-  applyFilter(decodeURIComponent(location.hash.slice(1)) || 'all');
 
   // ---- lightbox: shows the thumbnail instantly, swaps in the full-size photo when it has loaded
   var lb = document.createElement('div');
@@ -99,6 +80,32 @@
     else if (e.key === 'ArrowLeft') step(-1);
     else if (e.key === 'ArrowRight') step(1);
   });
+
+  // ---- overview of categories <-> one category's photos, driven by the URL hash (e.g. /photography/#birds)
+  var catsEl = document.getElementById('pg-cats'), viewEl = document.getElementById('pg-view');
+  var vTitle = document.getElementById('pg-view-title'), vDesc = document.getElementById('pg-view-desc');
+  var cards = {};
+  Array.prototype.forEach.call(catsEl.querySelectorAll('.pg-cat'), function (c) { cards[c.dataset.cat] = c; });
+  var pills = Array.prototype.slice.call(viewEl.querySelectorAll('.pg-filter'));
+
+  function route() {
+    var tag = '';
+    try { tag = decodeURIComponent(location.hash.slice(1)); } catch (e) {}
+    if (!cards[tag]) tag = '';
+    if (lb.classList.contains('open')) close();
+    catsEl.hidden = !!tag;
+    viewEl.hidden = !tag;
+    if (tag) {
+      vTitle.textContent = cards[tag].querySelector('.pg-cat-title').firstChild.textContent.trim();
+      vDesc.textContent = cards[tag].querySelector('.pg-cat-desc').textContent;
+      items.forEach(function (it) { it.hidden = it.dataset.tags.split(',').indexOf(tag) === -1; });
+    }
+    pills.forEach(function (b) {
+      if (b.dataset.cat === tag && tag) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('hashchange', function () { route(); window.scrollTo(0, 0); });
+  route();
 
   // swipe left/right on touch screens
   var x0 = null;
