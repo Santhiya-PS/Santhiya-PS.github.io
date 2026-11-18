@@ -7,16 +7,18 @@ layout: splash
 
 <h1 class="page__title pg-title">{{ page.title }}</h1>
 
-{%- comment -%} Overview: one card per category, each with a cover photo and a short description {%- endcomment %}
+{%- comment -%} Overview: one row per category: short description on the left, cover photo on the right {%- endcomment %}
 <div class="pg-cats" id="pg-cats">
 {%- for c in site.data.photo_categories -%}
 {%- assign cover = site.data.photos | where: "file", c.cover | first -%}
 {%- assign n = 0 -%}
 {%- for p in site.data.photos -%}{%- if p.tags contains c.key -%}{%- assign n = n | plus: 1 -%}{%- endif -%}{%- endfor -%}
 <a class="pg-cat" href="#{{ c.key }}" data-cat="{{ c.key }}">
-<img src="{{ '/assets/images/photography/thumbs/' | append: cover.file | append: '.jpg' | relative_url }}" alt="" width="{{ cover.width }}" height="{{ cover.height }}" loading="lazy">
+<span class="pg-cat-text">
 <span class="pg-cat-title">{{ c.title }} <span class="pg-cat-count">{{ n }}</span></span>
 <span class="pg-cat-desc">{{ c.description }}</span>
+</span>
+<img src="{{ '/assets/images/photography/thumbs/' | append: cover.file | append: '.jpg' | relative_url }}" alt="" width="{{ cover.width }}" height="{{ cover.height }}" loading="lazy">
 </a>
 {%- endfor -%}
 </div>

@@ -1,15 +1,23 @@
 /* Photography page: category overview + category view (thumbnail grid) + lightbox */
 .pg-title { margin-top: 1.5rem; }
-/* overview: one card per category (cover photo, title, description) */
-.pg-cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.4rem 1rem; margin: 0 0 2rem; }
+/* overview: one row per category, description on the left and a larger cover photo on the right */
+.pg-cats { display: flex; flex-direction: column; gap: 2rem; margin: 1rem 0 2rem; max-width: 62rem; }
 .pg-cats[hidden], .pg-view[hidden] { display: none; }
-.pg-cat { display: block; color: inherit; text-decoration: none; border: 0; }
+.pg-cat {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1.5rem; align-items: center;
+  color: inherit; text-decoration: none; border: 0;
+}
+.pg-cat-text { display: block; }
 .pg-cat img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 3px; }
-.pg-cat-title { display: block; margin-top: .6rem; font-size: 1.05rem; font-weight: 600; }
-.pg-cat:hover .pg-cat-title { text-decoration: underline; text-underline-offset: 3px; }
-.pg-cat-count { font-size: .8rem; font-weight: 400; opacity: .6; margin-left: .3em; }
-.pg-cat-desc { display: block; margin-top: .2rem; font-size: .9rem; line-height: 1.45; opacity: .8; }
-@media (max-width: 600px) { .pg-cats { grid-template-columns: 1fr 1fr; gap: 1.1rem .7rem; } .pg-cat-desc { font-size: .82rem; } }
+.pg-cat-title { display: block; font-size: 1.6rem; font-weight: 600; line-height: 1.2; }
+.pg-cat:hover .pg-cat-title { text-decoration: underline; text-underline-offset: 4px; }
+.pg-cat-count { font-size: .85rem; font-weight: 400; opacity: .55; margin-left: .3em; }
+.pg-cat-desc { display: block; margin-top: .45rem; font-size: .9rem; line-height: 1.5; opacity: .75; }
+@media (max-width: 700px) {
+  .pg-cat { grid-template-columns: 1fr; gap: .7rem; }
+  .pg-cat img { order: -1; }
+  .pg-cat-title { font-size: 1.3rem; }
+}
 
 /* category view: switcher links, heading, then the grid */
 .pg-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.2rem; }

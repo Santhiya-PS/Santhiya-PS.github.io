@@ -1,0 +1,12 @@
+{%- comment -%} Footer: one row of links (set in _config.yml under footer.links). No copyright line or feed link. {%- endcomment -%}
+{% if site.footer.links %}
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    {% for link in site.footer.links %}
+      {% if link.label and link.url %}
+        <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer{% if link.rel %} {{ link.rel }}{% endif %}"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label | escape_once | strip }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
