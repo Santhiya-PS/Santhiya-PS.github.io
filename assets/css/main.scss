@@ -7,7 +7,8 @@ search: false
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
-// Pure black background everywhere, and one simple font (Inter) for headings and text.
+// Dark theme = pure black background (default); the light theme is in light-theme.css, switched from the top bar.
+// One simple font (Inter) for headings and text.
 $background-color: #000;
 $footer-background-color: #000;
 $sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -19,8 +20,6 @@ $caption-font-family: $sans-serif;
 
 @import "minimal-mistakes/skins/dark"; // skin
 @import "minimal-mistakes"; // main partials
-
-html, body { background-color: #000; }
 
 // The theme sets many small labels in capitals; show them in normal case instead.
 .page__footer-follow .social-icons li,
@@ -45,3 +44,32 @@ h1, h2, h3, h4, h5, h6, .page__title { font-weight: 600; letter-spacing: 0; }
 
 // Footer: just the links, centred.
 .page__footer-follow ul { text-align: center; }
+
+// Home page: no big title over the banner photo (the name is already in the top bar).
+.layout--splash .page__hero--overlay .page__title { display: none; }
+
+// Home page "About me": text on the left, portrait on the right (stacked on small screens).
+.about { display: flex; align-items: flex-start; gap: 2rem; max-width: 52rem; }
+.about__text { flex: 1 1 auto; min-width: 0; }
+.about__photo { flex: 0 0 auto; width: 14rem; height: 14rem; object-fit: cover; border-radius: 6px; }
+@media (max-width: 700px) {
+  .about { flex-direction: column-reverse; gap: 1rem; }
+  .about__photo { width: 10rem; height: 10rem; }
+}
+
+// Dark/light switch in the top bar (shows the icon of the theme you would switch to).
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+.theme-item { display: flex; justify-content: flex-end; }
+.theme-toggle {
+  margin: 0 .5rem; padding: .3rem .5rem; border: 0; border-radius: 4px; cursor: pointer;
+  font: inherit; color: inherit; background: transparent; opacity: .8;
+}
+.theme-toggle:hover, .theme-toggle:focus-visible { opacity: 1; }
+.theme-toggle .fa-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .fa-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .fa-moon { display: inline-block; }
+.theme-toggle__label { display: none; }
+.hidden-links .theme-item { display: block; }
+.hidden-links .theme-toggle { width: 100%; margin: 0; padding: .5rem 1rem; text-align: start; }
+.hidden-links .theme-toggle__label { display: inline; margin-inline-start: .4rem; }

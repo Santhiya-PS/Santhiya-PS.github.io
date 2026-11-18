@@ -1,7 +1,12 @@
 # The categories shown on the Photography page, in this order.
 #   key:         the tag used in _data/photos.yml (lowercase, no spaces)
 #   title:       heading on the card and the category view
-#   description: a line or two telling visitors what to expect
+#   description: what visitors can expect. One line is fine; for more, use a block and separate
+#                paragraphs with a blank line (Markdown works):
+#                  description: |
+#                    First paragraph.
+#
+#                    Second paragraph.
 #   cover:       the `file` of the photo shown on the card (must be in photos.yml)
 - key: birds
   title: "Birds"
@@ -21,9 +26,9 @@
   cover: sunflower
 - key: city
   title: "City"
-  description: "Finding moments in between the walks."
+  description: "Skylines and tall buildings, in daylight and after dark."
   cover: lower-manhattan-at-night
 - key: street
   title: "Street & people"
-  description: "Streets, murals and the people in them."
+  description: "Finding moments in between the walks."
   cover: mural
