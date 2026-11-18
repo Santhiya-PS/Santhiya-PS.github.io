@@ -33,3 +33,68 @@
   tags: [birds, wildlife]
   width: 700
   height: 467
+- file: palms-in-the-paddy-fields
+  title: "Palms in the paddy fields"
+  tags: [landscape]
+  width: 525
+  height: 700
+- file: lightning
+  title: "Lightning"
+  tags: [sky, night]
+  width: 504
+  height: 700
+- file: sunflower
+  title: "Sunflower"
+  tags: [macro, nature]
+  width: 467
+  height: 700
+- file: wings-open
+  title: "Wings open"
+  tags: [birds, wildlife]
+  width: 700
+  height: 525
+- file: breaking-wave
+  title: "Breaking wave"
+  tags: [seascape]
+  width: 700
+  height: 616
+- file: moon-through-the-blur
+  title: "Moon through the blur"
+  tags: [nature, abstract]
+  width: 700
+  height: 466
+- file: midtown-from-above
+  title: "Midtown from above"
+  tags: [city]
+  width: 467
+  height: 700
+- file: lower-manhattan-at-night
+  title: "Lower Manhattan at night"
+  tags: [night, city]
+  width: 700
+  height: 394
+- file: sparrow-among-blossoms
+  title: "Sparrow among blossoms"
+  tags: [birds, wildlife, nature]
+  width: 467
+  height: 700
+- file: milky-way-core
+  title: "Milky Way core"
+  tags: [astro, night]
+  width: 467
+  height: 700
+- file: shore-from-above
+  title: "Shore from above"
+  tags: [seascape]
+  width: 700
+  height: 467
+- file: butterfly-and-shadows
+  title: "Butterfly and shadows"
+  tags: [wildlife, macro]
+  width: 700
+  height: 513
+- file: iridescent-clouds
+  title: "Iridescent clouds"
+  tags: [sky, nature]
+  width: 525
+  height: 700
